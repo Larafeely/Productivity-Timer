@@ -49,11 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         sessionCount++;
                         sessionCountDisplay.textContent = sessionCount;
                         notify('Work session complete! Time for a break.');
+
+
+                        
                         isWorkSession = false;
                         timeLeft = breakTime;
                         timerLabel.textContent = 'Break';
                     } else {
                         notify('Break over! Back to work.');
+
+                        
                         isWorkSession = true;
                         timeLeft = workTime;
                         timerLabel.textContent = 'Work';
@@ -84,7 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function updateTimes() {
         workTime = parseInt(workTimeInput.value) * 60 || 25 * 60;
+
+        
         breakTime = parseInt(breakTimeInput.value) * 60 || 5 * 60;
+
+
+        
         if (!isRunning) {
             timeLeft = isWorkSession ? workTime : breakTime;
             updateDisplay();
