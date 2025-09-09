@@ -3,36 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer</title>
+    <title>Advanced Pomodoro Timer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏲️</text></svg>">
 </head>
 <body>
-    <div class="container">
-        <h1>Timer</h1>
-        <div class="timer">
+    <main class="container">
+        <header>
+            <h1>Advanced Pomodoro Timer ⏲️</h1>
+        </header>
+        <section class="timer">
             <h2 id="timer-label">Work</h2>
-            <div id="timer-display">25:00</div>
+            <div id="timer-display" aria-live="polite">25:00</div>
             <div class="controls">
-                <button id="start-btn">Start</button>
-                <button id="pause-btn">Pause</button>
-                <button id="reset-btn">Reset</button>
+                <button id="start-btn" aria-label="Start the timer">Start</button>
+                <button id="pause-btn" aria-label="Pause the timer">Pause</button>
+                <button id="reset-btn" aria-label="Reset the timer">Reset</button>
             </div>
-        </div>
-        <div class="settings">
-            <label>Work (min): <input type="number" id="work-time" value="25" min="1"></label>
-            <label>Break (min): <input type="number" id="break-time" value="5" min="1"></label>
-        </div>
-        <div class="task-list">
+        </section>
+        <section class="settings">
+            <label for="work-time">Work (min):</label>
+            <input type="number" id="work-time" value="25" min="1" aria-label="Set work duration in minutes">
+            <label for="break-time">Break (min):</label>
+            <input type="number" id="break-time" value="5" min="1" aria-label="Set break duration in minutes">
+        </section>
+        <section class="task-list">
             <h2>Tasks</h2>
-            <input type="text" id="task-input" placeholder="Add a task...">
-            <button id="add-task-btn">Add Task</button>
-            <ul id="tasks"></ul>
-        </div>
-        <div class="progress">
+            <div class="task-input-container">
+                <input type="text" id="task-input" placeholder="Add a task..." aria-label="Enter a new task">
+                <button id="add-task-btn" aria-label="Add task to list">Add Task</button>
+            </div>
+            <ul id="tasks" aria-label="List of tasks"></ul>
+        </section>
+        <section class="progress">
             <h2>Progress</h2>
-            <p>Sessions Completed: <span id="session-count">0</span></p>
-        </div>
-    </div>
+            <p>Sessions Completed: <span id="session-count" aria-live="polite">0</span></p>
+        </section>
+        <footer>
+            <p>Built with ❤️ for productivity | <a href="https://github.com/yourusername/productivity-timer" target="_blank">Contribute on GitHub</a></p>
+        </footer>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
