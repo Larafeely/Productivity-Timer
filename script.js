@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let interval = null;
     let sessionCount = 0;
 
-    // Request notification permission
+    // ask the user to ahave - top of page notification permission
     if (Notification.permission !== 'granted') {
         Notification.requestPermission();
     }
